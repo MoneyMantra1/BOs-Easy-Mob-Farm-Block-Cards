@@ -22,3 +22,5 @@ pluginManagement {
 
 rootProject.name = 'Easy Mob Farm 1.21.1'
 include("Common", "Fabric", "Forge", "NeoForge")
+
+include("BlockDropAddon")

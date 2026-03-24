@@ -1,0 +1,6 @@
+{
+  "block.easy_mob_farm_block_drop_addon.block_drop_farm": "Block Drop Farm",
+  "item.easy_mob_farm_block_drop_addon.block_capture_card": "Block Capture Card",
+  "tooltip.easy_mob_farm_block_drop_addon.block_drop_farm.desc": "Insert a Block Capture Card to passively generate its captured block over time.",
+  "tooltip.easy_mob_farm_block_drop_addon.processing_speed": "Processing Speed: %s items / 5 min"
+}
