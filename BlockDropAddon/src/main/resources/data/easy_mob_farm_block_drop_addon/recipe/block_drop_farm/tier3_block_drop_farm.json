@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "S#S",
+    "SSS"
+  ],
+  "key": {
+    "S": {"item": "minecraft:stone"},
+    "#": {"item": "easy_mob_farm:tier3_mob_farm_template"}
+  },
+  "result": {
+    "id": "easy_mob_farm_block_drop_addon:block_drop_farm",
+    "components": {
+      "easy_mob_farm:mob_farm_data": {"tierLevel": "tier_3"},
+      "minecraft:custom_model_data": 3
+    }
+  }
+}
