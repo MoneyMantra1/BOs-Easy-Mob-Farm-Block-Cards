@@ -1,0 +1,35 @@
+pluginManagement {
+  repositories {
+    gradlePluginPortal()
+    maven {
+      name = 'Fabric'
+      url = 'https://maven.fabricmc.net/'
+    }
+    maven {
+      name = 'Forge'
+      url = 'https://maven.minecraftforge.net/'
+    }
+    maven {
+      name = 'NeoForge'
+      url = 'https://maven.neoforged.net/releases/'
+    }
+    maven {
+      name = 'Sponge Snapshots'
+      url = 'https://repo.spongepowered.org/repository/maven-public/'
+    }
+  }
+}
+
+rootProject.name = 'Easy Mob Farm 1.21.1'
+
+def requestedTasks = gradle.startParameter.taskNames.collect { it.toLowerCase(Locale.ROOT) }
+def wantsFabric = requestedTasks.any { it.contains(':fabric') || it == 'fabric' || it.contains('fabric:') }
+def wantsForge = requestedTasks.any { (it.contains(':forge') || it == 'forge' || it.contains('forge:')) && !it.contains('neoforge') }
+def wantsNeoForge = requestedTasks.isEmpty() || requestedTasks.any { it.contains(':neoforge') || it == 'neoforge' || it.contains('neoforge:') || it.contains(':blockdropaddon') || it == 'blockdropaddon' || it.contains('blockdropaddon:') || it == 'build' }
+
+def includeCommon = wantsNeoForge || wantsFabric || wantsForge || requestedTasks.isEmpty()
+if (includeCommon) include('Common')
+if (wantsFabric) include('Fabric')
+if (wantsForge) include('Forge')
+if (wantsNeoForge) include('NeoForge')
+if (wantsNeoForge) include('BlockDropAddon')
